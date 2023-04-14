@@ -4,3 +4,4 @@ variable "name" {}
 variable "vpc_id" {}
 variable "vpc_cidr" {}
 variable "internal" {}
+variable "app_port_no" {}
