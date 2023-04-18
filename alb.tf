@@ -11,17 +11,17 @@ resource "aws_lb" "main" {
   }
 }
 
-resource "aws_security_group" "internal" {
+resource "aws_security_group" "main" {
   name        = "${var.env}-${var.name}-alb.sg"
   description = "${var.env}-${var.name}-alb.sg"
   vpc_id      = var.vpc_id
 
   ingress {
     description      = "HTTP"
-    from_port        = 22
-    to_port          = 22
+    from_port        = 80
+    to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = [var.vpc_cidr]
+    cidr_blocks      = var.internal ? [var.vpc_cidr] : ["0.0.0.0/0"]
   }
 
 
