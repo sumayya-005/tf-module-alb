@@ -33,6 +33,6 @@ resource "aws_security_group" "internal"{
   }
 
   tags = {
-    Name = "${var.env}-${var.name}internal-alb.sg"
+    Name = "${var.env}-${var.name}-internal-alb.sg"
   }
 }
