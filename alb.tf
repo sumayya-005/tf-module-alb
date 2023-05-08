@@ -5,8 +5,8 @@ load_balancer_type = "application"
 security_groups    = [aws_security_group.main.id]
 subnets            = var.subnets
 
-tags = {
-  Name = "${var.env}-${var.name}"
+   tags = {
+      Name = "${var.env}-${var.name}"
   }
 }
 
@@ -32,8 +32,9 @@ vpc_id      = var.vpc_id
    ipv6_cidr_blocks = ["::/0"]
 }
 
-tags = {
-Name = "${var.env}-${var.name}-alb.sg"
+
+  tags = {
+    Name = "${var.env}-${var.name}-alb.sg"
 }
 }
 
