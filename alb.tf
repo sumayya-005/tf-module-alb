@@ -3,7 +3,7 @@ name               = "${var.env}-${var.name}"
 internal           = var.internal
 load_balancer_type = "application"
 security_groups    = [aws_security_group.main.id]
-subnets            = var. subnets
+subnets            = var.subnets
 
    tags = {
       Name = "${var.env}-${var.name}-internal"
