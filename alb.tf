@@ -20,7 +20,7 @@ vpc_id      = var.vpc_id
    from_port   = 80
    to_port     = 80
    protocol    = "tcp"
-   cidr_blocks = [var.vpc_cidr]
+   cidr_blocks = var.internal ? [var.vpc_cidr] : ["0.0.0.0/0"]
 }
 
  egress {
